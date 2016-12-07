@@ -1,4 +1,4 @@
-# mt-theme-Inito
+# mt-theme-Initio
 
 ## これは何?
 
