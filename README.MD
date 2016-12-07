@@ -1,4 +1,4 @@
-# mtnet-theme-Inito
+# mt-theme-Inito
 
 ## これは何?
 
