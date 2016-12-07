@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="<MTBlogLanguage>">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title><MTArchiveDate format="%Y年%m月"> アーカイブ | <MTBlogName></title>
+
+	<link rel="shortcut icon" href="<MTBlogURL>assets/images/gt_favicon.png">
+	
+<MTInclude module="HTMLヘッダー">
+</head>
+<body>
+
+<header id="header">
+<MTInclude module="バナーヘッダー">
+
+<MTinclude module="ナビゲーション">
+</header>
+
+<main id="main">
+
+	<div class="container">
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+				<article class="post">
+					<header class="entry-header">
+						<h1 class="entry-title"><MTArchiveDate format="%Y年%m月"> アーカイブ</h1>
+					</header>
+                    <MTEntries>
+					<div class="entry-content">						
+                        <div class="entry-meta"> 
+							<span class="posted-on"><time class="entry-date published" date="<MTEntryDate format="%Y-%m-%d">"><MTEntryDate format="%Y-%m-%d"></time></span>			
+						</div>
+                      <h2>
+                      <a href="<MTEntryPermaLink>"><MTEntryTitle></a>
+                      </h2>
+                    </div>
+                    </MTEntries>
+				</article>
+			</div> 
+		</div>
+
+		<center class="">
+			<ul class="pagination">
+                <MTArchivePrevious type="Monthly">
+				<li><a href="<MTArchiveLink>">&laquo; <MTArchiveDate format="%Y年%m月"> アーカイブ</a></li>
+                </MTArchivePrevious>
+            <MTArchiveNext type="Monthly">
+            <li><a href="<MTArchiveLink>"><MTArchiveDate format="%Y年%m月"> アーカイブ &raquo;</a></li>
+        </MTArchiveNext>
+			</ul>
+		</center>
+	
+
+	</div>	<!-- /container -->
+
+</main>
+
+<MTInclude module="フッター">
+
+<MTInclude module="アンダーフッター">
+
+</body>
+</html>

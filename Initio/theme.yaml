@@ -1,0 +1,175 @@
+---
+author_link: https://github.com/Nick-smallworld/mt-theme-Initio
+author_name: Nick-smallworld
+class: blog
+description: "BootStrap をベースとしたデザインテンプレート「Initio」を Movable Type 用のテーマにしました。\r\nオリジナルファイルは http://www.gettemplate.com/info/initio/ にあります。"
+thumbnail_file: thumb.png
+thumbnail_file_medium: thumb-medium.png
+thumbnail_file_small: thumb-small.png
+elements:
+  blog_static_files:
+    component: ~
+    data:
+      - assets
+    importer: blog_static_files
+  custom_fields:
+    component: commercial
+    data:
+      entryogpcaption:
+        default: ''
+        description: 見出し画像のキャプションが必要な場合、入力します。
+        name: 記事見出し画像キャプション
+        obj_type: entry
+        options: ~
+        required: '0'
+        tag: entryogpcaption
+        type: text
+      entryogpimage:
+        default: ''
+        description: ウェブおよびOGPの見出しに使用する画像を挿入してください。説明も同時に挿入します。アイテムの説明をalt属性に利用します。
+        name: 記事見出し画像
+        obj_type: entry
+        options: ~
+        required: '0'
+        tag: entryogpimage
+        type: image
+      pageogpcaption:
+        default: ''
+        description: 見出し画像のキャプションが必要な場合、入力します。
+        name: ページ見出し画像キャプション
+        obj_type: page
+        options: ~
+        required: '0'
+        tag: pageogpcaption
+        type: text
+      pageogpimage:
+        default: ''
+        description: ウェブおよびOGPの見出しに使用する画像を挿入してください。説明も同時に挿入します。アイテムの説明をalt属性に利用します。
+        name: ページ見出し画像
+        obj_type: page
+        options: ~
+        required: '0'
+        tag: pageogpimage
+        type: image
+    importer: custom_fields
+  template_set:
+    component: ~
+    data:
+      base_path: templates
+      label: 'exported_template set'
+      templates:
+        archive:
+          category_archives:
+            label: カテゴリーアーカイブ
+            mappings:
+              category:
+                archive_type: Category
+                file_template: '%-c/%i'
+                preferred: '1'
+          monthly_archives:
+            label: 月別アーカイブ
+            mappings:
+              monthly:
+                archive_type: Monthly
+                file_template: '%y/%m/%i'
+                preferred: '1'
+        index:
+          feed_recent:
+            label: フィード
+            outfile: atom.xml
+            rebuild_me: '1'
+          main_index:
+            label: メインページ
+            outfile: index.html
+            rebuild_me: '1'
+          styles:
+            label: 'custom css'
+            outfile: assets/css/custom.css
+            rebuild_me: '1'
+          sitemap:
+            label: sitemap.xml
+            outfile: sitemap.xml
+            rebuild_me: '1'
+          blog_top:
+            label: ブログトップ
+            outfile: blog.html
+            rebuild_me: '1'
+          main_css:
+            label: 'main css'
+            outfile: assets/css/styles.css
+            rebuild_me: '1'
+        individual:
+          entry:
+            label: 記事
+            mappings:
+              individual:
+                archive_type: Individual
+                file_template: '%y/%m/%-f'
+                preferred: '1'
+        module:
+          navigation:
+            label: ナビゲーション
+          footer:
+            label: フッター
+          under_footer:
+            label: アンダーフッター
+          html_head:
+            label: HTMLヘッダー
+          banner_head:
+            label: バナーヘッダー
+          sidebar:
+            label: サイドバー
+        page:
+          webpage:
+            label: ウェブページ
+            mappings:
+              page:
+                archive_type: Page
+                file_template: '%-c/%-f'
+                preferred: '1'
+        system:
+          comment_preview:
+            label: コメントプレビュー
+          comment_response:
+            label: コメント完了
+          dynamic_error:
+            label: ダイナミックパブリッシングエラー
+          popup_image:
+            label: ポップアップ画像
+          search_results:
+            label: 検索結果
+        widget:
+          category_archive_list:
+            label: カテゴリアーカイブ
+          monthly_archive_dropdown:
+            label: 月別アーカイブ(ドロップダウン)
+          monthly_archive_list:
+            label: 月別アーカイブ
+          pages_list:
+            label: ページ一覧
+          recent_comments:
+            label: 最近のコメント
+          recent_entries:
+            label: 最近の記事
+          search:
+            label: 検索
+          syndication:
+            label: 購読
+          tag_cloud:
+            label: タグクラウド
+        widgetset:
+          related_contents:
+            label: 関連コンテンツ
+            order: 1000
+            widgets:
+              - 検索
+              - カテゴリアーカイブ
+              - 月別アーカイブ(ドロップダウン)
+              - 最近のコメント
+              - タグクラウド
+              - 購読
+    importer: template_set
+id: initio
+label: Initio
+name: Initio
+version: '1.0'
