@@ -1,0 +1,74 @@
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">リンク</h3>
+				<div class="widget-body">
+<ul>
+<li><a href="#">example</a></li>
+<li><a href="#">example</a></li>
+<li><a href="#">example</a></li>
+<li><a href="#">example</a></li>
+                </div>
+			</div>
+        
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">ブログカテゴリアーカイブ</h3>
+				<div class="widget-body">
+                <MTMultiBlog include_blogs="children">
+<mt:topLevelCategories>
+<mt:subCatIsFirst>
+    <ul>
+</mt:subCatIsFirst>
+<mt:if tag="CategoryCount">
+      <li>
+        <a href="<mt:CategoryArchiveLink>">
+          <mt:categoryLabel> (<mt:categoryCount>)
+        </a>
+        <mt:subCatsRecurse>
+      </li>
+<mt:else>
+      <li>
+      <mt:CategoryLabel>
+      <mt:subCatsRecurse>
+      </li>
+</mt:If>
+<mt:subCatIsLast>
+    </ul>
+</mt:subCatIsLast></mt:TopLevelCategories>
+            </MTMultiBlog>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">ブログ月別アーカイブ</h3>
+				<div class="widget-body">
+                <MTMultiBlog include_blogs="children">
+                            <mt:Archives type="Monthly">
+                              <mt:ArchiveList>
+                              <MTArchiveListHeader>
+                              <ul>
+                              </MTArchiveListHeader>
+                                <li><a href="<$mt:ArchiveLink$>"><$mt:ArchiveTitle$></a></li>
+                              <MTArchiveListFooter>
+                              </ul>
+                              </MTArchiveListFooter>
+                              </mt:ArchiveList>
+                            </mt:Archives>
+            </MTMultiBlog>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">ソーシャル</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+						<a href="#" target="_blank"><i class="fa fa-twitter fa-2"></i></a>
+					</p>
+				</div>
+			</div>
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
