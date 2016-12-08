@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="<MTBlogLanguage>">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="<MTEntryExcerpt>">
+	<title><MTEntryTitle> | <MTBlogName></title>
+
+    <MTInclude module="HTMLヘッダー">
+    <meta property="og:title" content="<MTEntryTitle>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<MTEntryPermaLink>" />
+    <meta property="og:image" content="<MTIf tag="entryogpimage"><MTEntryAssets limit="1"><MTAssetURL></MTEntryAssets><MTElse></MTIf>" />
+
+</head>
+<body>
+
+<header id="header">
+<MTInclude module="バナーヘッダー">
+
+<MTInclude module="ナビゲーション">
+</header>
+
+<main id="main">
+
+	<div class="container">
+
+		<div class="row topspace">
+			
+			<!-- Article main content -->
+			<article class="col-sm-8 col-sm-offset-2 maincontent">
+				<header class="page-header">
+ 						<div class="page-meta"> 
+ 							<span class="posted-on"><time class="page-date published" date="<MTEntryDate format="%Y-%m-%d">"><MTEntryDate format="%Y-%m-%d"></time></span>			
+ 						</div>
+					<h1 class="page-title"><MTEntryTitle></h1>
+                <span class="categories"><span class="categories"><MTEntryCategories><a href="<MTCategoryArchiveLink>"><MTCategoryLabel></a><MTUnless name="__last__"> | </MTUnless></MTEntryCategories></span>
+
+                </header>
+                    <p><MTIf tag="entryogpimage"><MTEntryOGPImageAsset limit="1"><img src="<MTAssetURL>" alt="<MTEntryOGPCaption>"></MTEntryOGPImageAsset>
+                    <MTElse><MTEntryAssets limit="1"><img src="<MTAssetURL>" alt="<MTAssetDescription>"></MTEntryAssets></MTIf></p>
+
+				<MTEntryBody>
+
+                <MTEntryMore>
+
+                    
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	
+</main>
+
+<MTinclude module="フッター">
+    
+<MTInclude module="アンダーフッター">
+</body>
+</html>

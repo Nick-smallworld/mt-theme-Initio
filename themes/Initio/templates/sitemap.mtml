@@ -1,0 +1,95 @@
+<MT:For regex_replace="/\s+\n/g","\n" trim="1">
+<MTSetvars>
+DateYear=<$mt:date format="%Y"$>
+DateMonth=<$mt:date format="%Y%m"$>
+</MTSetvars><?xml version="1.0" encoding="<$mt:publishcharset$>"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<mt:ignore>トップページ</mt:ignore>
+    <url>
+        <loc><$mt:BlogURL encode_html="1"$></loc>
+        <lastmod><$MT:Date format="%Y-%m-%dT%H:%M:%S"$><$MT:BlogTimezone$></lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+<mt:ignore>ウェブページ</mt:ignore>
+<MT:Pages no_folder="1">
+    <url>
+        <loc><$MT:PagePermalink encode_html="1"$></loc>
+        <lastmod><$MT:PageDate format="%Y-%m-%dT%H:%M:%S"$><$MT:BlogTimezone$></lastmod>
+        <priority>1.0</priority>
+    </url>
+</MT:Pages>
+<MT:Pages>
+    <url>
+        <loc><$MT:PagePermalink encode_html="1"$></loc>
+        <lastmod><$MT:PageDate format="%Y-%m-%dT%H:%M:%S"$><$MT:BlogTimezone$></lastmod>
+        <priority>1.0</priority>
+    </url>
+</MT:Pages>
+<mt:ignore>ブログ記事</mt:ignore>
+<MT:IfArchiveTypeEnabled archive_type="Individual">
+<MTSetVarBlock name="blogentrycount"><$MTBlogEntryCount$></MTSetVarBlock>
+<MTEntries lastn="$blogentrycount">
+    <url>
+        <loc><$MTEntryPermalink encode_xml="1"$></loc>
+        <lastmod><$MTEntryModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod>
+        <priority>1.0</priority>
+    </url>
+</MTEntries>
+</MT:IfArchiveTypeEnabled>
+<mt:ignore>カテゴリ</mt:ignore>
+<MT:IfArchiveTypeEnabled archive_type="Category">
+<MTCategories>
+    <url>
+        <loc><$MTCategoryArchiveLink encode_xml="1"$></loc>
+        <MTEntries lastn="1" sort_by="modified_on"><lastmod><$MTEntryModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod></MTEntries>
+        <priority>0.5</priority>
+    </url>
+</MTCategories>
+</MT:IfArchiveTypeEnabled>
+<mt:ignore>年別アーカイブ</mt:ignore>
+<MT:IfArchiveTypeEnabled archive_type="Yearly">
+<MT:ArchiveList archive_type="Yearly">
+<mt:setvarblock name="Date"><$MT:ArchiveDate format="%Y"$></mt:setvarblock>
+    <url>
+        <loc><$MT:ArchiveLink encode_html="1"$></loc>
+        <MTEntries lastn="1" sort_by="modified_on"><lastmod><$MTEntryModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod></MTEntries>
+<mt:ignore>
+        <mt:if name="DateYear" eq="$Date"><changefreq>daily</changefreq><mt:else><changefreq>never</changefreq></mt:if>
+</mt:ignore>
+        <priority>0.5</priority>
+    </url>
+</MT:ArchiveList>
+</MT:IfArchiveTypeEnabled>
+<mt:ignore>月別アーカイブ
+<MT:IfArchiveTypeEnabled archive_type="Monthly">
+<MT:ArchiveList archive_type="Monthly">
+<mt:setvarblock name="Date"><$MT:ArchiveDate format="%Y%m"$></mt:setvarblock>
+    <url>
+        <loc><$MT:ArchiveLink encode_html="1"$></loc>
+        <MTEntries lastn="1" sort_by="modified_on"><lastmod><$MTEntryModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod></MTEntries>
+<mt:ignore>
+        <mt:if name="DateMonth" eq="$Date"><changefreq>daily</changefreq><mt:else><changefreq>never</changefreq></mt:if>
+</mt:ignore>
+        <priority>0.5</priority>
+    </url>
+</MT:ArchiveList>
+</MT:IfArchiveTypeEnabled>
+</mt:ignore>
+
+<mt:ignore>
+    <url>
+        <loc></loc>
+        <lastmod></lastmod>
+        <changefreq></changefreq>
+        <priority></priority>
+    </url>
+    <url>
+        <loc>http://example.com/</loc>
+        <lastmod>2008-05-27T02:49:06+09:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+</mt:ignore>
+</urlset>
+</MT:For>
